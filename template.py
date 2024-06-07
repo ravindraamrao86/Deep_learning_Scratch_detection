@@ -5,7 +5,7 @@ import logging
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-project_name = "Deep_learning_Scratch_detection"
+project_name = "CNN_PIPELINE"
 
 # List of file paths to be created
 list_of_files = [
@@ -24,7 +24,7 @@ list_of_files = [
     "requirements.txt",
     "setup.py",
     "research/trials.ipynb",
-    "test.py"
+    "templates/index.html"
 ]
 
 # Create directories and files
@@ -32,14 +32,18 @@ for filepath in list_of_files:
     filepath = Path(filepath)
     filedir, filename = os.path.split(filepath)
 
-    if filedir:
-        os.makedirs(filedir, exist_ok=True)
-        logging.info(f"Creating directory: {filedir} for the file: {filename}")
+    # Ensure file directory is created
+    if filedir !="":
+        os.makedirs(filedir,exist_ok=True)
+        logging.info(f"Creating directory:{filedir} for the file:{filename}")
 
+    # Create the file if it does not exist or is empty
     if not os.path.exists(filepath) or os.path.getsize(filepath) == 0:
         with open(filepath, "w") as f:
-            pass
+            pass  # Create an empty file
         logging.info(f"Creating empty file: {filepath}")
     else:
         logging.info(f"{filename} already exists")
 
+# If you see this message after running the script, it means all files were processed
+logging.info("Directory and file setup complete.")
