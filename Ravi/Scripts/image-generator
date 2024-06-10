@@ -1,0 +1,4 @@
+#!C:\Users\Laptop On Rent 078\Deep_learning_Scratch_detection\Ravi\Scripts\python.exe
+from openbaton.main import main
+
+main()

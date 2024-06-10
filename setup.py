@@ -1,5 +1,6 @@
 from setuptools import find_packages,setup
 from typing import List
+import os
 
 HYPEN_E_DOT= '-e .'
 def get_requirements(file_path:str)->List[str]: 
@@ -17,10 +18,10 @@ def get_requirements(file_path:str)->List[str]:
     return requirements        
 
 setup(
-name="Deep_learning_Scratch_detection",
+REPO_Name="Deep_learning_Scratch_detection",
 version='0.0.1',
 author= "Ravindra Amrao",
-author_email= "ravindraamrao77@gmail.com",
+author_email= "ravindraamrao1986@gmail.com",
 packages= find_packages(),
 install_requires=get_requirements("requirements.txt")
 )
